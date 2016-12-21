@@ -11,7 +11,11 @@ my_auth = OAuth(token="719348056827633664-sMMJNecL1IzAYiPG4SFUqTVmqW2aMuf",
 t = Twitter(auth=my_auth)
 max_id = None
 for _ in range(10):
+<<<<<<< HEAD
     if max_id is None:
+=======
+    if True:
+>>>>>>> 64da65a4db5abe3b40d30a047c559e65155f625c
         ans = t.search.tweets(q="#atheism", count=100)
     else:
         ans = t.search.tweets(q="#atheism", count=100, max_id=max_id)
