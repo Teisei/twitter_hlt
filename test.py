@@ -18,7 +18,10 @@ def main():
             ans = t.search.tweets(q="#atheism", count=100)
         else:
             ans = t.search.tweets(q="#atheism", count=100, max_id=max_id)
-        max_id = get_next_max_id(ans[u"search_metadata"][u"next_results"])
+	if u"next_results" in ans[u"search_metadata"]:
+	    max_id = get_next_max_id(ans[u"search_metadata"][u"next_results"])
+	else:
+	    break;
         for item in ans[u"statuses"]:
             print "\n-------------------------------------------"
             print item[u"text"].strip().encode("utf-8")
