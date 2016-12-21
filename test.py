@@ -15,7 +15,7 @@ def main():
     max_id = None
     for _ in range(10):
         if max_id is None:
-            ans = t.search.tweets(q="#atheism", count=100)
+            ans = t.search.tweets(q="#atheism", count=55)
         else:
             ans = t.search.tweets(q="#atheism", count=100, max_id=max_id)
 	if u"next_results" in ans[u"search_metadata"]:
