@@ -343,7 +343,7 @@ class TwitterCall(object):
             if len(data) == 0:
                 return wrap_response({}, handle.headers)
             elif "json" == self.format:
-                res = json.loads(data.decode('utf8'))
+                res = json.loads(data.decode('utf8', errors="ignore"))
                 return wrap_response(res, handle.headers)
             else:
                 return wrap_response(
